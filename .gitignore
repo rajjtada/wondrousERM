@@ -12,3 +12,8 @@ target
 .classpath
 .project
 .settings
+src/main/resources
+src/main/java/cloudcode/helloworld/configurations
+.env
+Dockerfile
+pom.xml
