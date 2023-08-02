@@ -17,3 +17,5 @@ src/main/java/cloudcode/helloworld/configurations
 .env
 Dockerfile
 pom.xml
+img
+README.MD

@@ -157,7 +157,7 @@ public class HandleCustomer {
                             .getJSONObject("interactive")
                             .getJSONObject("button_reply")
                             .getString("id").equals("pastBills")){
-                            //send past bills(implementation is left allover)
+                            //send past bills(implementation is left all-over)
                             String requestBody = "{" +
                             "'messaging_product': 'whatsapp'," +
                             "'to': '" + phoneNumber + "'," +
@@ -219,7 +219,7 @@ public class HandleCustomer {
                             "]" +
                         "}" +
                     "}}";
-                        whatsAppService.sendWhatsAppMessage(requestBody);                        
+                    whatsAppService.sendWhatsAppMessage(requestBody);                        
                 }
             }
         }

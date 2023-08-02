@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
+import cloudcode.helloworld.HandleEmployee;
 import cloudcode.helloworld.customer.HandleCustomer;
 
 /** Defines a controller to handle HTTP requests */
@@ -17,6 +18,9 @@ public final class HelloWorldController {
     
     @Autowired
     private HandleCustomer handleCustomer;
+
+    @Autowired
+    private HandleEmployee handleEmployee;
 
     
     @GetMapping("/receive_msg")
@@ -86,6 +90,10 @@ public final class HelloWorldController {
         if(obj.getString("typeOfData").equals("customerInquiryForm") && obj.getString("role").equals("c")){
             handleCustomer.processInquiryData(obj);
         }
+
+        if(obj.getString("typeOfData").equals("addEmployeeForm") && obj.getString("role").equals("a")){
+            handleEmployee.addEmployee(obj);
+        }   
 
         return new ResponseEntity<>(HttpStatus.OK);
     }
